@@ -33,11 +33,12 @@ const Login = () => {
 
     try {
       const response = await axios.post("http://localhost:3000/api/auth/login", { email, password });
-      const { token, user } = response.data;
+      const { token, userDetails } = response.data;
       
       // Store token and user data in local storage
+     
       localStorage.setItem("token", token);
-      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("user", JSON.stringify(userDetails));
 
       toast.success("Login successful!");
       setTimeout(() => {

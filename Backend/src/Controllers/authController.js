@@ -50,7 +50,7 @@ const registerUser = async (req, res) => {
           msg: "User registered successfully",
           token,
           userDetails: user,
-          // userProfile: newProfile,
+      
         });
       }
     );
@@ -104,7 +104,7 @@ const loginUser = async (req, res) => {
     res.status(500).send('Server error');
   }
 };
- 
+
 
 module.exports = {
   registerUser,

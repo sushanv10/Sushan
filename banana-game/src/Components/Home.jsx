@@ -3,6 +3,7 @@ import { FaUser, FaGamepad, FaTrophy, FaSignOutAlt } from 'react-icons/fa'; // I
 import BananaImage from '../assets/Images/BananaImage.png';
 import { Link } from 'react-router-dom';
 
+
 const Home = () => {
   return (
     <div className='flex justify-center items-center bg-gradient-to-b from-yellow-400 to-yellow-100 h-screen'>
@@ -12,9 +13,9 @@ const Home = () => {
       </div>
 
       <div className="relative bg-yellow-200 bg-opacity-50 h-[370px] w-[400px] mt-16 rounded-[10px] shadow-lg flex flex-col items-center p-8 space-y-6">
-        <button className="flex items-center justify-center w-full bg-yellow-500 text-white mt-5 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300">
+         <Link to="/profile"><button className="flex items-center justify-center w-[340px] bg-yellow-500 text-white mt-5 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300">
           <FaUser className="mr-2" /> Profile
-        </button>
+        </button></Link>
 
         <Link to="/game"><button className="flex items-center justify-center w-[340px] bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300">
           <FaGamepad className="mr-2" /> Start Game 

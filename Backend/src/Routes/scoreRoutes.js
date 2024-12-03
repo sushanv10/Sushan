@@ -1,10 +1,11 @@
-// src/Routes/scoreRoutes.js
+// routes/scoreRoutes.js
 const express = require('express');
 const router = express.Router();
-const { createOrUpdateScore } = require('../Controllers/scoreController');
-const authMiddleware = require('../middleware/authMiddleware');
+const { createOrUpdateScore, getScore } = require('../Controllers/scoreController');
 
 // POST route to create or update score
-router.post('/', createOrUpdateScore); // Use /api/score as the base path, no need for "score" in the route path
+router.post('/', createOrUpdateScore);
+router.get('/:userId', getScore); // Route to fetch user score
+
 
 module.exports = router;

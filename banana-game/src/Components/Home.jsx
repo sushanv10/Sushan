@@ -1,10 +1,18 @@
 import React from 'react';
 import { FaUser, FaGamepad, FaTrophy, FaSignOutAlt } from 'react-icons/fa'; // Import icons
 import BananaImage from '../assets/Images/BananaImage.png';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
 
 const Home = () => {
+   const navigate = useNavigate();
+   const handleLogout = () => {
+    // Clear user data from localStorage
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+
+    // Navigate to the login page
+    navigate('/login');
+  };
   return (
     <div className='flex justify-center items-center bg-gradient-to-b from-yellow-400 to-yellow-100 h-screen'>
       <div className="absolute top-20 left-0 right-0 flex justify-center items-center">
@@ -25,7 +33,10 @@ const Home = () => {
           <FaTrophy className="mr-2" /> Leaderboard
         </button>
 
-        <button className="flex items-center justify-center w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300">
+       <button
+          onClick={handleLogout}
+          className="flex items-center justify-center w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300"
+        >
           <FaSignOutAlt className="mr-2" /> Logout
         </button>
       </div>
